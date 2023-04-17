@@ -2,16 +2,22 @@
   <div class="container m-auto mt-5">
     <p class="text-xl font-bold text-center text-[#77bcf1]">Home</p>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-      corrupti voluptatibus dicta et necessitatibus inventore nam ex sed
-      reiciendis saepe ratione illum reprehenderit accusantium minima id
-      exercitationem maxime, quas omnis.
+      Page visits: {{ data }}
     </p>
+    <button p-3 text-white bg-purple-600 rounded-lg><NuxtLink to="/fetch">Fetch</NuxtLink></button>
+    <button p-3 text-white bg-purple-600 rounded-lg ml-9><NuxtLink to="/data">AsyncData</NuxtLink></button>
+    <button p-3 text-white bg-purple-600 rounded-lg ml-9><NuxtLink to="/mountain">mou</NuxtLink></button>
+
   </div>
 </template>
 
-<script setup>
-  definePageMeta({
-    layout: 'default'
-  })
+<script setup lang="ts">
+// const { data } = await useAsyncData('count', () => $fetch('/api/count'))
+const { data } = await useFetch('/api/count');
+definePageMeta({
+  layout: "default",
+  pageTransition: {
+    name: "rotate"
+  },
+});
 </script>

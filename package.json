@@ -10,6 +10,9 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.5",
+    "@unocss/nuxt": "^0.50.6",
+    "@unocss/preset-attributify": "^0.50.6",
+    "@unocss/preset-uno": "^0.51.2",
     "nuxt": "^3.3.3"
   }
 }
